@@ -10,6 +10,7 @@ This repo is part of a medium article to show how to deploy a full stack app for
 
 
 ### Run locally
+In the enviroment.ts file replace *ADD_ME* with the URL for your function app you have set up in the Medium article. This sgould include the full domain and trailing forward slash e.g. https://*yourapp*.azurewebsites.net/
 
 ``` 
     cd my-app
@@ -20,6 +21,7 @@ This repo is part of a medium article to show how to deploy a full stack app for
 You can then navigate to localhost:4200 in your browser
 
 ### How to deploy
+In the enviroment.prod.ts file replace *ADD_ME* with the URL for your function app you have set up in the Medium article. This should include the full domain and trailing forward slash e.g. https://*yourapp*.azurewebsites.net/
 
 Run the following command in the *./my-app* directory to build the distributable
 
