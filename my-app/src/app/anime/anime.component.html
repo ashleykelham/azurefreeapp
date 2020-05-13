@@ -1,0 +1,21 @@
+<p *ngIf="!anime"><em>Loading...</em></p>
+
+<ul >
+     <li class = "tp-card" *ngFor="let a of anime">
+        <mat-card >
+                <mat-card-content>
+                    <div class="container">
+                        <a [href]='a.link' target="_blank"> 
+                            <img class="image" [src]='a.imageUrl'/>
+                            <div class="overlay">
+                                <div class="text">{{a.description}}</div>
+                            </div>
+                        </a>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>>
+                    <mat-card-title>{{a.name}}</mat-card-title>
+                </mat-card-actions>
+        </mat-card>
+    </li>
+</ul>
