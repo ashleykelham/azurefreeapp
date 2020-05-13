@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  baseUrl: 'ADD-ME',
+  baseUrl: 'ADD_ME',
   production: false
 };
 
