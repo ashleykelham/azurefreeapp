@@ -6,7 +6,7 @@
 
  li {
     float: left;
-   }
+ }
 
 .container {
     position: relative;
@@ -54,3 +54,18 @@
     text-overflow: ellipsis;
     text-align: center;
   }
+
+  .search-aligner{
+    text-align: center;
+  }
+
+.search-container{
+  display: inline-block;
+}
+
+/* Style the search box inside the navigation bar */
+.search-container input[type=search] {
+  padding: 6px;
+  font-size: 26px;
+  border: none;
+}

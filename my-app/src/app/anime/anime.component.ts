@@ -10,6 +10,8 @@ import { environment } from './../../environments/environment';
 export class AnimeComponent implements OnInit {
 
   anime: Anime[];
+  filteredAnime: Anime[];
+  _animeQuery: string;
   private http: HttpClient;
   private baseUrl: string;
 
@@ -17,14 +19,31 @@ export class AnimeComponent implements OnInit {
      this.http = http;
      this.baseUrl = environment.baseUrl;
      console.info(this.baseUrl);
-     this.http.get<Anime[]>(this.baseUrl + "api/HttpTriggerAnime").subscribe(result => {
-       this.anime = result;
-       console.log("retrieved: " + this.anime);
-     }, error => console.error(error));
   }
 
   ngOnInit() {
+    this.http.get<Anime[]>(this.baseUrl + "api/HttpTriggerAnime").subscribe(result => {
+      this.anime = result;
+      this.filteredAnime = this.filterAnime(this._animeQuery);
+      console.log("retrieved: " + this.anime);
+    }, error => console.error(error));
+  }
 
+  get animeQuery(): string {
+    return this._animeQuery;
+  }
+  set animeQuery(value: string) {
+    this._animeQuery = value;
+    this.filteredAnime = this.filterAnime(value);
+  }
+
+  filterAnime(filter: string): Anime[]{
+    var output = this.anime.sort((a, b) => a.name.localeCompare(b.name));
+    if(!filter)
+      return output;
+      
+    filter = filter.toLowerCase();
+    return output.filter(a => a.name.toLowerCase().indexOf(filter) !== -1);
   }
 }
 

@@ -1,7 +1,11 @@
+<div class="search-aligner">
+    <div class="search-container">
+        <input type="search" placeholder="Search.." [(ngModel)]='animeQuery'>
+    </div>
+</div>
 <p *ngIf="!anime"><em>Loading...</em></p>
-
 <ul >
-     <li class = "tp-card" *ngFor="let a of anime">
+     <li class = "tp-card" *ngFor="let a of filteredAnime">
         <mat-card >
                 <mat-card-content>
                     <div class="container">
