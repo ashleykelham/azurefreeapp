@@ -1,5 +1,7 @@
 # # Azure free full stack app demo: Application
-This repo is part of a medium article to show how to deploy a full stack app for very little money in Azure. This is the applications front end written in Angular.
+This is part of a [Medium article](https://medium.com/@ashley.kelham/developing-a-startup-on-azure-for-under-1-407c3b290d36). The articles explains the infrastrcuture setup. 
+
+It shows how to deploy a full stack app for very little money in Azure. This is the applications front end written in Angular.
 
 ### Requirements
 
