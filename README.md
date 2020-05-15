@@ -23,7 +23,9 @@ In the enviroment.ts file replace *ADD_ME* with the URL for your function app yo
 You can then navigate to localhost:4200 in your browser
 
 ### How to deploy
-In the enviroment.prod.ts file replace *ADD_ME* with the URL for your function app you have set up in the Medium article. This should include the full domain and trailing forward slash e.g. https://*yourapp*.azurewebsites.net/
+In the enviroment.prod.ts file set the apiUrl for your Api. This should include the full path e.g. https://*yourApiManagementInstance*.azure-api.net/azurefreeapp/httptriggeranime
+
+Also set the apiKey to match your Azure Api Management subscription key.
 
 Run the following command in the *./my-app* directory to build the distributable
 

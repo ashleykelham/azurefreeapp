@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject  } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 
 @Component({
@@ -13,20 +13,25 @@ export class AnimeComponent implements OnInit {
   filteredAnime: Anime[];
   _animeQuery: string;
   private http: HttpClient;
-  private baseUrl: string;
+  private url: string;
+  private httpOptions: HttpHeaders;
 
   constructor(http: HttpClient) {
      this.http = http;
-     this.baseUrl = environment.baseUrl;
-     console.info(this.baseUrl);
+     this.url = environment.apiUrl;
+     this.httpOptions = new HttpHeaders({
+        'Ocp-Apim-Subscription-Key': `${environment.apiKey}`
+      });
   }
 
   ngOnInit() {
-    this.http.get<Anime[]>(this.baseUrl + "api/HttpTriggerAnime").subscribe(result => {
-      this.anime = result;
-      this.filteredAnime = this.filterAnime(this._animeQuery);
-      console.log("retrieved: " + this.anime);
-    }, error => console.error(error));
+    this.http.get<Anime[]>(this.url, { headers: this.httpOptions }).subscribe(
+      result => {
+        this.anime = result;
+        this.filteredAnime = this.filterAnime(this._animeQuery);
+        console.log("retrieved: " + this.anime);
+      }, 
+      error => console.error(error));
   }
 
   get animeQuery(): string {

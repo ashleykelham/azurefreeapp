@@ -3,8 +3,9 @@
         <input type="search" placeholder="Search.." [(ngModel)]='animeQuery'>
     </div>
 </div>
-<p *ngIf="!anime"><em>Loading...</em></p>
+
 <ul >
+    <p *ngIf="!anime"><em>Loading...</em></p>
      <li class = "tp-card" *ngFor="let a of filteredAnime">
         <mat-card >
                 <mat-card-content>

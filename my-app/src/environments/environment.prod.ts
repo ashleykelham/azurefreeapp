@@ -1,4 +1,5 @@
 export const environment = {
-  baseUrl: 'ADD-ME',
+  apiUrl: 'https://azurefreeapp.azure-api.net/azurefreeapp/HttpTriggerAnime',
+  apiKey: 'ADD-ME',
   production: true
 };
